@@ -9,14 +9,6 @@
 /* Begin PBXBuildFile section */
 		278694262240D24000CBEF36 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278694252240D24000CBEF36 /* Album.swift */; };
 		278694282240D24A00CBEF36 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278694272240D24A00CBEF36 /* Photo.swift */; };
-		2786942E22415C2B00CBEF36 /* APIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2786942D22415C2B00CBEF36 /* APIClient.swift */; };
-		278F02E52242505B000F8172 /* NetworkManagerr.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02E42242505B000F8172 /* NetworkManagerr.swift */; };
-		278F02E722426CA4000F8172 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02E622426CA4000F8172 /* Environment.swift */; };
-		278F02E922426D5B000F8172 /* DispatcherProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02E822426D5B000F8172 /* DispatcherProtocol.swift */; };
-		278F02EB22426D8A000F8172 /* NetworkDispatcherFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02EA22426D8A000F8172 /* NetworkDispatcherFactory.swift */; };
-		278F02ED22426E71000F8172 /* ServerResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02EC22426E71000F8172 /* ServerResponse.swift */; };
-		278F02EF22426EA4000F8172 /* NetworkService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02EE22426EA4000F8172 /* NetworkService.swift */; };
-		278F02F122426EE5000F8172 /* NetworkServices.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02F022426EE5000F8172 /* NetworkServices.swift */; };
 		278F02F322427065000F8172 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02F222427065000F8172 /* AlbumsViewController.swift */; };
 		278F03062242C996000F8172 /* ParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02F82242C996000F8172 /* ParameterEncoding.swift */; };
 		278F03072242C996000F8172 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02F92242C996000F8172 /* URLParameterEncoding.swift */; };
@@ -61,14 +53,6 @@
 /* Begin PBXFileReference section */
 		278694252240D24000CBEF36 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		278694272240D24A00CBEF36 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
-		2786942D22415C2B00CBEF36 /* APIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIClient.swift; sourceTree = "<group>"; };
-		278F02E42242505B000F8172 /* NetworkManagerr.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManagerr.swift; sourceTree = "<group>"; };
-		278F02E622426CA4000F8172 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
-		278F02E822426D5B000F8172 /* DispatcherProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DispatcherProtocol.swift; sourceTree = "<group>"; };
-		278F02EA22426D8A000F8172 /* NetworkDispatcherFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDispatcherFactory.swift; sourceTree = "<group>"; };
-		278F02EC22426E71000F8172 /* ServerResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ServerResponse.swift; sourceTree = "<group>"; };
-		278F02EE22426EA4000F8172 /* NetworkService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkService.swift; sourceTree = "<group>"; };
-		278F02F022426EE5000F8172 /* NetworkServices.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkServices.swift; sourceTree = "<group>"; };
 		278F02F222427065000F8172 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
 		278F02F82242C996000F8172 /* ParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParameterEncoding.swift; sourceTree = "<group>"; };
 		278F02F92242C996000F8172 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
@@ -147,7 +131,6 @@
 		278694232240CCA900CBEF36 /* Service */ = {
 			isa = PBXGroup;
 			children = (
-				2786942C22415C1400CBEF36 /* Network */,
 				278F032A2246A797000F8172 /* Helper.swift */,
 			);
 			path = Service;
@@ -161,21 +144,6 @@
 				278F032822458012000F8172 /* PhotoViewModel.swift */,
 			);
 			path = "View model";
-			sourceTree = "<group>";
-		};
-		2786942C22415C1400CBEF36 /* Network */ = {
-			isa = PBXGroup;
-			children = (
-				2786942D22415C2B00CBEF36 /* APIClient.swift */,
-				278F02E42242505B000F8172 /* NetworkManagerr.swift */,
-				278F02E622426CA4000F8172 /* Environment.swift */,
-				278F02E822426D5B000F8172 /* DispatcherProtocol.swift */,
-				278F02EA22426D8A000F8172 /* NetworkDispatcherFactory.swift */,
-				278F02EC22426E71000F8172 /* ServerResponse.swift */,
-				278F02EE22426EA4000F8172 /* NetworkService.swift */,
-				278F02F022426EE5000F8172 /* NetworkServices.swift */,
-			);
-			path = Network;
 			sourceTree = "<group>";
 		};
 		278F02F62242C996000F8172 /* Networking */ = {
@@ -400,13 +368,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				278F02E922426D5B000F8172 /* DispatcherProtocol.swift in Sources */,
-				278F02F122426EE5000F8172 /* NetworkServices.swift in Sources */,
 				278694282240D24A00CBEF36 /* Photo.swift in Sources */,
-				278F02EB22426D8A000F8172 /* NetworkDispatcherFactory.swift in Sources */,
 				2792737A2249729100B779F8 /* Observable.swift in Sources */,
 				278F03092242C996000F8172 /* ApiManager.swift in Sources */,
-				278F02E722426CA4000F8172 /* Environment.swift in Sources */,
 				278F030C2242C996000F8172 /* HTTPTask.swift in Sources */,
 				278F032B2246A797000F8172 /* Helper.swift in Sources */,
 				278F031F22442991000F8172 /* Style.swift in Sources */,
@@ -416,14 +380,11 @@
 				278F030D2242C996000F8172 /* HTTPMethod.swift in Sources */,
 				278F030F2242C996000F8172 /* NetworkLogger.swift in Sources */,
 				278F030E2242C996000F8172 /* Router.swift in Sources */,
-				278F02ED22426E71000F8172 /* ServerResponse.swift in Sources */,
 				278F03072242C996000F8172 /* URLParameterEncoding.swift in Sources */,
 				278F032522457CE8000F8172 /* PhotoCell.swift in Sources */,
 				27B104DC2240A89D005D0E03 /* AppDelegate.swift in Sources */,
 				278F03062242C996000F8172 /* ParameterEncoding.swift in Sources */,
-				278F02E52242505B000F8172 /* NetworkManagerr.swift in Sources */,
 				278F02F322427065000F8172 /* AlbumsViewController.swift in Sources */,
-				278F02EF22426EA4000F8172 /* NetworkService.swift in Sources */,
 				278F031D2243DB25000F8172 /* AlbumPreviewCell.swift in Sources */,
 				278F030A2242C996000F8172 /* MovieEndPoint.swift in Sources */,
 				278694262240D24000CBEF36 /* Album.swift in Sources */,
@@ -431,7 +392,6 @@
 				278F032122456642000F8172 /* AlbumViewModel.swift in Sources */,
 				278F03102242C996000F8172 /* EndPointType.swift in Sources */,
 				278F03182243B70B000F8172 /* AlbumsController.swift in Sources */,
-				2786942E22415C2B00CBEF36 /* APIClient.swift in Sources */,
 				278F032322456DB9000F8172 /* AlbumViewController.swift in Sources */,
 				278F032D2246AF02000F8172 /* PhotoViewController.swift in Sources */,
 				279273762247BA7200B779F8 /* Resource.swift in Sources */,
