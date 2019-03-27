@@ -38,6 +38,8 @@
 		27B104E32240A8A1005D0E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B104E22240A8A1005D0E03 /* Assets.xcassets */; };
 		27B104E62240A8A1005D0E03 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B104E42240A8A1005D0E03 /* LaunchScreen.storyboard */; };
 		27B104F12240A8A2005D0E03 /* mosaiqueTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B104F02240A8A2005D0E03 /* mosaiqueTests.swift */; };
+		69D9114C1B96136548D142AF /* Pods_mosaique.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 824062D976EE786DA16D8AB5 /* Pods_mosaique.framework */; };
+		86C5161C295F21D0BA6FE4E4 /* Pods_mosaiqueTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 07D525FC48F083881BC0179F /* Pods_mosaiqueTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07D525FC48F083881BC0179F /* Pods_mosaiqueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mosaiqueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		278694252240D24000CBEF36 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		278694272240D24A00CBEF36 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		278F02F222427065000F8172 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
@@ -86,6 +89,11 @@
 		27B104EC2240A8A1005D0E03 /* mosaiqueTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = mosaiqueTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B104F02240A8A2005D0E03 /* mosaiqueTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mosaiqueTests.swift; sourceTree = "<group>"; };
 		27B104F22240A8A2005D0E03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65C3D67F4D520D2BF9262285 /* Pods-mosaique.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mosaique.debug.xcconfig"; path = "Target Support Files/Pods-mosaique/Pods-mosaique.debug.xcconfig"; sourceTree = "<group>"; };
+		694D2721DCB9A28E0A5F53C8 /* Pods-mosaiqueTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mosaiqueTests.release.xcconfig"; path = "Target Support Files/Pods-mosaiqueTests/Pods-mosaiqueTests.release.xcconfig"; sourceTree = "<group>"; };
+		7F5FF26E65FC5BCBFCFF7D09 /* Pods-mosaique.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mosaique.release.xcconfig"; path = "Target Support Files/Pods-mosaique/Pods-mosaique.release.xcconfig"; sourceTree = "<group>"; };
+		824062D976EE786DA16D8AB5 /* Pods_mosaique.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mosaique.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA635CA7A67A28C4B322FA0C /* Pods-mosaiqueTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mosaiqueTests.debug.xcconfig"; path = "Target Support Files/Pods-mosaiqueTests/Pods-mosaiqueTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -93,6 +101,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				69D9114C1B96136548D142AF /* Pods_mosaique.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -100,6 +109,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C5161C295F21D0BA6FE4E4 /* Pods_mosaiqueTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -230,6 +240,8 @@
 				27B104DA2240A89D005D0E03 /* mosaique */,
 				27B104EF2240A8A2005D0E03 /* mosaiqueTests */,
 				27B104D92240A89D005D0E03 /* Products */,
+				367279D4F808D81BC3F43F56 /* Pods */,
+				893A81F4C228292C780EF64D /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -267,6 +279,26 @@
 			path = mosaiqueTests;
 			sourceTree = "<group>";
 		};
+		367279D4F808D81BC3F43F56 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				65C3D67F4D520D2BF9262285 /* Pods-mosaique.debug.xcconfig */,
+				7F5FF26E65FC5BCBFCFF7D09 /* Pods-mosaique.release.xcconfig */,
+				EA635CA7A67A28C4B322FA0C /* Pods-mosaiqueTests.debug.xcconfig */,
+				694D2721DCB9A28E0A5F53C8 /* Pods-mosaiqueTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		893A81F4C228292C780EF64D /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				824062D976EE786DA16D8AB5 /* Pods_mosaique.framework */,
+				07D525FC48F083881BC0179F /* Pods_mosaiqueTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -274,9 +306,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27B104F52240A8A2005D0E03 /* Build configuration list for PBXNativeTarget "mosaique" */;
 			buildPhases = (
+				D09CAA118A6B55830B846124 /* [CP] Check Pods Manifest.lock */,
 				27B104D42240A89D005D0E03 /* Sources */,
 				27B104D52240A89D005D0E03 /* Frameworks */,
 				27B104D62240A89D005D0E03 /* Resources */,
+				B9ABF78CC6C0F41B1695927B /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -291,6 +325,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 27B104F82240A8A2005D0E03 /* Build configuration list for PBXNativeTarget "mosaiqueTests" */;
 			buildPhases = (
+				F4A2BAD2CEB0F1C600EFB74B /* [CP] Check Pods Manifest.lock */,
 				27B104E82240A8A1005D0E03 /* Sources */,
 				27B104E92240A8A1005D0E03 /* Frameworks */,
 				27B104EA2240A8A1005D0E03 /* Resources */,
@@ -362,6 +397,75 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B9ABF78CC6C0F41B1695927B /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-mosaique/Pods-mosaique-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-mosaique/Pods-mosaique-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D09CAA118A6B55830B846124 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mosaique-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F4A2BAD2CEB0F1C600EFB74B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-mosaiqueTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		27B104D42240A89D005D0E03 /* Sources */ = {
@@ -554,6 +658,7 @@
 		};
 		27B104F62240A8A2005D0E03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 65C3D67F4D520D2BF9262285 /* Pods-mosaique.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -573,6 +678,7 @@
 		};
 		27B104F72240A8A2005D0E03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7F5FF26E65FC5BCBFCFF7D09 /* Pods-mosaique.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -592,6 +698,7 @@
 		};
 		27B104F92240A8A2005D0E03 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = EA635CA7A67A28C4B322FA0C /* Pods-mosaiqueTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -613,6 +720,7 @@
 		};
 		27B104FA2240A8A2005D0E03 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 694D2721DCB9A28E0A5F53C8 /* Pods-mosaiqueTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
