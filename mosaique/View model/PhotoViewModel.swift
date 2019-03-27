@@ -8,13 +8,14 @@
 //
 
 import UIKit
+import Kingfisher
 
 class PhotoViewModel {
   let photo: Photo
   let apiManager: ApiManager
   let thumbnail: Observable<UIImage?> = Observable(nil)
   let image: Observable<UIImage?> = Observable(nil)
-  
+  let id: Int
   
   
   var bestPossiblePhoto: UIImage? {
@@ -34,17 +35,27 @@ class PhotoViewModel {
   init(with photo: Photo, apiManager: ApiManager) {
     self.apiManager = apiManager
     self.photo = photo
+    id = photo.id
   }
   
   func fetchThumbnailIfNeeded() {
     if thumbnail.value == nil && !loadingThumbnail {
       loadingThumbnail = true
-      apiManager.getImage(url: photo.thumbnailUrl) { [weak self] (image, error) in
-        if let image = image {
+      KingfisherManager.shared.retrieveImage(with: URL(string: photo.thumbnailUrl)!) { [weak self] result in
+        switch result {
+        case .success(let value):
           self?.loadingThumbnail = false
-          self?.thumbnail.value = image
+          self?.thumbnail.value = value.image
+        case .failure(let error):
+          print("error")
         }
       }
+//      apiManager.getImage(url: photo.thumbnailUrl) { [weak self] (image, error) in
+//        if let image = image {
+//          self?.loadingThumbnail = false
+//          self?.thumbnail.value = image
+//        }
+//      }
     }
   }
   
@@ -52,12 +63,26 @@ class PhotoViewModel {
   func fetchImageIfNeeded() {
     if image.value == nil && !loadingImage {
       loadingImage = true
-      apiManager.getImage(url: photo.url) { [weak self] (image, error) in
-        if let image = image {
+      KingfisherManager.shared.retrieveImage(with: URL(string: photo.url)!) { [weak self] result in
+        switch result {
+        case .success(let value):
           self?.loadingImage = false
-          self?.image.value = image
+          self?.image.value = value.image
+        case .failure(let error):
+          print("error")
         }
       }
+//      apiManager.getImage(url: photo.url) { [weak self] (image, error) in
+//        if let image = image {
+//
+//          self?.image.value = image
+//        }
+//      }
     }
+  }
+  
+  func clearMemory() {
+    thumbnail.value = nil
+    image.value = nil
   }
 }

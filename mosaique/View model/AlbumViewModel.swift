@@ -102,6 +102,18 @@ class AlbumViewModel {
     firstPreview?.fetchImageIfNeeded()
     secondPreview?.fetchImageIfNeeded()
   }
+  
+  func clearMemory() {
+    let firstPreviewId = firstPreview?.id ?? -1
+    let secondPreviewId = secondPreview?.id ?? -1
+    
+    photoViewModels.forEach {
+      let doesMatchWithPreviews = $0.id == firstPreviewId || $0.id == secondPreviewId
+      if !doesMatchWithPreviews {
+        $0.clearMemory()
+      }
+    }
+  }
 }
 
 

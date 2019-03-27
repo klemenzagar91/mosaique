@@ -18,7 +18,6 @@ class AlbumsController {
   
   
   
-  
   init(with apiManager: ApiManager) {
     self.apiManager = apiManager
   }
@@ -43,4 +42,23 @@ class AlbumsController {
       }
     }
   }
+  
+  func clearMemory() {
+    albumViewModels.value.forEach {
+      $0.clearMemory()
+    }
+  }
+  
+//  func update(albumViewModels: [AlbumViewModel], with latestAlbums: [Album]) -> [AlbumViewModel] {
+//    for album in latestAlbums {
+//      let existingViewModelIndex = albumViewModels.firstIndex {
+//        $0.albumId == album.id
+//      }
+//      if let existingViewModelIndex = existingViewModelIndex {
+//
+//      }
+//    }
+//    return []
+//  }
+  
 }

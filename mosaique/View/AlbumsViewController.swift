@@ -35,10 +35,15 @@ class AlbumsViewController: UIViewController {
     super.viewWillAppear(animated)
     navigationController?.setNavigationBarHidden(true, animated: true)
     deselectTableRow()
+    albumsController.clearMemory()
   }
   
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
+  }
+  
+  override func didReceiveMemoryWarning() {
+    albumsController.clearMemory()
   }
   
   override var preferredStatusBarStyle: UIStatusBarStyle {

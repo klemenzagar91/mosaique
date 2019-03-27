@@ -57,7 +57,6 @@ extension AlbumViewController: UICollectionViewDataSource {
     
     if let photo = albumViewModel.photo(for: indexPath.row) {
       cell.photoID = photo.photo.id
-      cell.imageView.image = photo.thumbnail.value
       photo.fetchThumbnailIfNeeded()
     }
     return cell
@@ -71,6 +70,7 @@ extension AlbumViewController: UICollectionViewDataSource {
             cell.imageView.image = thumbnail
           }
         }
+        cell.imageView.image = photo.thumbnail.value
       }
     }
   }
