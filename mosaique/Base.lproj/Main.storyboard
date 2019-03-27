@@ -198,6 +198,87 @@
             </objects>
             <point key="canvasLocation" x="1992.8" y="8.5457271364317844"/>
         </scene>
+        <!--Photo View Controller-->
+        <scene sceneID="Mmt-jU-tI7">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GWf-lL-Kcc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController storyboardIdentifier="PhotoViewController" id="DXs-z6-EUY" customClass="PhotoViewController" customModule="mosaique" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="dDD-go-C2O">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <visualEffectView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hZt-vX-QHh">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="TCB-uh-bvU">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                </view>
+                                <blurEffect style="light"/>
+                            </visualEffectView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-Yh-2gC">
+                                <rect key="frame" x="37.5" y="183.5" width="300" height="300"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ucc-Yh-2gC" secondAttribute="height" id="qaf-Af-5N8"/>
+                                </constraints>
+                            </imageView>
+                            <view opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fm1-fU-ifC">
+                                <rect key="frame" x="37.5" y="123" width="300" height="48.5"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZGs-uh-gj2">
+                                        <rect key="frame" x="16" y="16" width="268" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="ZGs-uh-gj2" firstAttribute="top" secondItem="fm1-fU-ifC" secondAttribute="top" constant="16" id="Jpg-am-l7b"/>
+                                    <constraint firstAttribute="bottom" secondItem="ZGs-uh-gj2" secondAttribute="bottom" constant="12" id="VmS-mH-hjY"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZGs-uh-gj2" secondAttribute="trailing" constant="16" id="bIl-5W-lg0"/>
+                                    <constraint firstItem="ZGs-uh-gj2" firstAttribute="leading" secondItem="fm1-fU-ifC" secondAttribute="leading" constant="16" id="pHg-os-VGW"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-S0-l87" customClass="AppButton" customModule="mosaique" customModuleProvider="target">
+                                <rect key="frame" x="132.5" y="515.5" width="110" height="29"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="110" id="ttr-c6-vUG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                                <state key="normal" title="CLOSE"/>
+                                <connections>
+                                    <action selector="handleCloseAction:" destination="DXs-z6-EUY" eventType="touchUpInside" id="xYd-5a-cex"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="ucc-Yh-2gC" firstAttribute="width" secondItem="dDD-go-C2O" secondAttribute="width" multiplier="0.8" id="0Rm-O2-3sx"/>
+                            <constraint firstItem="hZt-vX-QHh" firstAttribute="trailing" secondItem="ygw-df-sqo" secondAttribute="trailing" id="2X7-nb-7VG"/>
+                            <constraint firstItem="ucc-Yh-2gC" firstAttribute="top" secondItem="fm1-fU-ifC" secondAttribute="bottom" constant="12" id="Dek-4I-Pfj"/>
+                            <constraint firstItem="ucc-Yh-2gC" firstAttribute="centerX" secondItem="dDD-go-C2O" secondAttribute="centerX" id="JlA-4s-VcW"/>
+                            <constraint firstItem="hZt-vX-QHh" firstAttribute="bottom" secondItem="ygw-df-sqo" secondAttribute="bottom" id="NNP-yb-Z2x"/>
+                            <constraint firstItem="hZt-vX-QHh" firstAttribute="top" secondItem="dDD-go-C2O" secondAttribute="top" id="Te6-Hc-dL7"/>
+                            <constraint firstItem="hZt-vX-QHh" firstAttribute="leading" secondItem="ygw-df-sqo" secondAttribute="leading" id="ZlZ-uf-FqA"/>
+                            <constraint firstItem="fm1-fU-ifC" firstAttribute="trailing" secondItem="ucc-Yh-2gC" secondAttribute="trailing" id="c96-Qq-hID"/>
+                            <constraint firstItem="JHJ-S0-l87" firstAttribute="top" secondItem="ucc-Yh-2gC" secondAttribute="bottom" constant="32" id="eD4-dT-CPb"/>
+                            <constraint firstItem="fm1-fU-ifC" firstAttribute="leading" secondItem="ucc-Yh-2gC" secondAttribute="leading" id="rf0-1T-fWP"/>
+                            <constraint firstItem="JHJ-S0-l87" firstAttribute="centerX" secondItem="ygw-df-sqo" secondAttribute="centerX" id="umV-Ic-a7b"/>
+                            <constraint firstItem="ucc-Yh-2gC" firstAttribute="centerY" secondItem="dDD-go-C2O" secondAttribute="centerY" id="y4H-67-F82"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ygw-df-sqo"/>
+                    </view>
+                    <connections>
+                        <outlet property="backgroundView" destination="hZt-vX-QHh" id="L62-DG-fei"/>
+                        <outlet property="closeButton" destination="JHJ-S0-l87" id="laK-kr-au8"/>
+                        <outlet property="photoTitleContainer" destination="fm1-fU-ifC" id="xbo-47-ww6"/>
+                        <outlet property="photoTitleLabel" destination="ZGs-uh-gj2" id="wyr-8M-YiK"/>
+                        <outlet property="photoView" destination="ucc-Yh-2gC" id="Ptp-fk-kFf"/>
+                    </connections>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="2896.8000000000002" y="8.5457271364317844"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="fo1-Pz-wqN">
             <objects>
