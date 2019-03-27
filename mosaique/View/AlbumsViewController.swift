@@ -107,6 +107,7 @@ extension AlbumsViewController: UITableViewDataSource {
     if let album = albumsController.album(for: indexPath.row) {
       cell.assign(modelIdentifier: album.albumId)
       album.fetchPhotosIfNeeded()
+      album.fetchPreviewImagesIfNeeded()
     } else {
       cell.reset()
     }

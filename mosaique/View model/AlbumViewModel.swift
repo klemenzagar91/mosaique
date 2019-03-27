@@ -37,6 +37,7 @@ class AlbumViewModel {
   let apiManager: ApiManager
   
   private var fetched = false
+  private var isFetchingAlbums = false
   
   private var photos: [Photo] = []
   let photoViewModelsObserver = Observable([PhotoViewModel]())
@@ -82,8 +83,10 @@ class AlbumViewModel {
   }
   
   func fetchPhotosIfNeeded() {
-    if !fetched {
+    if !fetched && !isFetchingAlbums {
+      isFetchingAlbums = true
       apiManager.getAllPhotos(albumId: album.id) { [weak self] (photos, error) in
+        self?.isFetchingAlbums = false
         if let photos = photos, let strongSelf = self {
           strongSelf.fetched = true
           strongSelf.photos = photos
@@ -93,6 +96,11 @@ class AlbumViewModel {
         }
       }
     }
+  }
+  
+  func fetchPreviewImagesIfNeeded() {
+    firstPreview?.fetchImageIfNeeded()
+    secondPreview?.fetchImageIfNeeded()
   }
 }
 
