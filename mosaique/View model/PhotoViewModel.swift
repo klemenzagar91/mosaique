@@ -47,7 +47,7 @@ class PhotoViewModel {
           self?.loadingThumbnail = false
           self?.thumbnail.value = value.image
         case .failure(let error):
-          print("error")
+          print("image couldn't be loaded \(error.localizedDescription)")
         }
       }
     }
@@ -63,7 +63,7 @@ class PhotoViewModel {
           self?.loadingImage = false
           self?.image.value = value.image
         case .failure(let error):
-          print("error")
+          print("image couldn't be loaded \(error.localizedDescription)")
         }
       }
     }

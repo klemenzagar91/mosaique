@@ -244,7 +244,7 @@
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JHJ-S0-l87" customClass="AppButton" customModule="mosaique" customModuleProvider="target">
                                         <rect key="frame" x="132.5" y="499.5" width="110" height="29"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="110" id="ttr-c6-vUG"/>
+                                            <constraint firstAttribute="width" priority="251" constant="110" id="ttr-c6-vUG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                                         <state key="normal" title="CLOSE"/>
