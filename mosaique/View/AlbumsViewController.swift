@@ -10,7 +10,6 @@ import UIKit
 
 class AlbumsViewController: UIViewController {
   @IBOutlet weak var tableView: UITableView!
-  
   private let refreshControl = UIRefreshControl()
   var albumsController: AlbumsController!
   
@@ -143,6 +142,5 @@ extension AlbumsViewController: UITableViewDataSource {
     }
   }
 }
-
 
 

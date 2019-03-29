@@ -50,12 +50,6 @@ class PhotoViewModel {
           print("error")
         }
       }
-//      apiManager.getImage(url: photo.thumbnailUrl) { [weak self] (image, error) in
-//        if let image = image {
-//          self?.loadingThumbnail = false
-//          self?.thumbnail.value = image
-//        }
-//      }
     }
   }
   
@@ -72,12 +66,6 @@ class PhotoViewModel {
           print("error")
         }
       }
-//      apiManager.getImage(url: photo.url) { [weak self] (image, error) in
-//        if let image = image {
-//
-//          self?.image.value = image
-//        }
-//      }
     }
   }
   
