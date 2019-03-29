@@ -13,7 +13,7 @@ class AlbumViewController: UIViewController {
   let cellId = "photoCellId"
   
   var albumViewModel: AlbumViewModel!
-  
+  var selectedCell: PhotoCell?
   
   
   
@@ -100,10 +100,12 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
   func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
     if let cell = collectionView.cellForItem(at: indexPath) as? PhotoCell {
       if let photo = albumViewModel.photo(for: indexPath.item), photo.thumbnail.value != nil || photo.image.value != nil {
+        selectedCell = cell
         let sb = UIStoryboard.init(name: "Main", bundle: nil)
         if let photoVC = sb.instantiateViewController(withIdentifier: "PhotoViewController") as? PhotoViewController {
-          photoVC.modalTransitionStyle = .coverVertical
           photoVC.modalPresentationStyle = .overCurrentContext
+          photoVC.transitioningDelegate = self
+          photoVC.navigationDelegate = self
           photoVC.photoViewModel = photo
           present(photoVC, animated: true)
         }
@@ -112,3 +114,33 @@ extension AlbumViewController: UICollectionViewDelegateFlowLayout {
   }
 }
 
+
+
+
+extension AlbumViewController: UIViewControllerTransitioningDelegate {
+  func animationController(forPresented presented: UIViewController,
+                           presenting: UIViewController,
+                           source: UIViewController)
+    -> UIViewControllerAnimatedTransitioning? {
+      if let selectedCell = selectedCell {
+        return PeekAnimationController(presenting: true, sourceTile: selectedCell.imageView)
+      }
+      return nil
+  }
+  
+  func animationController(forDismissed dismissed: UIViewController) -> UIViewControllerAnimatedTransitioning? {
+    if let selectedCell = selectedCell {
+      return PeekDismissAnimationController(finalView: selectedCell.imageView)
+    }
+    return nil
+  }
+}
+
+
+
+
+extension AlbumViewController: Navigating {
+  func shouldDismiss(_ vc: UIViewController) {
+    dismiss(animated: true)
+  }
+}

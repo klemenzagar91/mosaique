@@ -6,6 +6,10 @@
 //  Copyright © 2019 Klemen Zagar. All rights reserved.
 //
 
+protocol Navigating: class {
+  func shouldDismiss(_ vc: UIViewController)
+}
+
 import UIKit
 
 class PhotoViewController: UIViewController {
@@ -14,9 +18,10 @@ class PhotoViewController: UIViewController {
   @IBOutlet weak var photoTitleLabel: UILabel!
   @IBOutlet weak var closeButton: AppButton!
   @IBOutlet weak var backgroundView: UIVisualEffectView!
+  @IBOutlet weak var contentContainerView: UIView!
   
   var photoViewModel: PhotoViewModel!
-  
+  weak var navigationDelegate: Navigating?
   
   
   override func viewDidLoad() {
@@ -44,6 +49,10 @@ class PhotoViewController: UIViewController {
     updateUI()
   }
   
+  override func viewDidAppear(_ animated: Bool) {
+    super.viewDidAppear(animated)
+  }
+  
   
   func updateUI() {
     photoView.image = photoViewModel.bestPossiblePhoto
@@ -51,6 +60,26 @@ class PhotoViewController: UIViewController {
   }
   
   @IBAction func handleCloseAction(_ sender: UIButton) {
-    dismiss(animated: true)
+    navigationDelegate?.shouldDismiss(self)
+  }
+}
+
+
+
+extension PhotoViewController: PeekTransition {
+  func transitionBackground() -> UIView {
+    return backgroundView
+  }
+  
+  func transitionContentView() -> UIView {
+    return contentContainerView
+  }
+  
+  func peekView() -> UIView {
+    return photoView
+  }
+  
+  func headerview() -> UIView {
+    return photoTitleContainer
   }
 }

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		273714B2224C3120005D3BE1 /* PeekAnimationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 273714B1224C3120005D3BE1 /* PeekAnimationController.swift */; };
 		278694262240D24000CBEF36 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278694252240D24000CBEF36 /* Album.swift */; };
 		278694282240D24A00CBEF36 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278694272240D24A00CBEF36 /* Photo.swift */; };
 		278F02F322427065000F8172 /* AlbumsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02F222427065000F8172 /* AlbumsViewController.swift */; };
@@ -54,6 +55,7 @@
 
 /* Begin PBXFileReference section */
 		07D525FC48F083881BC0179F /* Pods_mosaiqueTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mosaiqueTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		273714B1224C3120005D3BE1 /* PeekAnimationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PeekAnimationController.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		278694252240D24000CBEF36 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
 		278694272240D24A00CBEF36 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		278F02F222427065000F8172 /* AlbumsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumsViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +118,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		273714B0224C3051005D3BE1 /* Transition */ = {
+			isa = PBXGroup;
+			children = (
+				273714B1224C3120005D3BE1 /* PeekAnimationController.swift */,
+			);
+			path = Transition;
+			sourceTree = "<group>";
+		};
 		278694212240CC9E00CBEF36 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		2786942B2241579400CBEF36 /* View model */ = {
 			isa = PBXGroup;
 			children = (
+				273714B0224C3051005D3BE1 /* Transition */,
 				278F03172243B70B000F8172 /* AlbumsController.swift */,
 				278F032022456642000F8172 /* AlbumViewModel.swift */,
 				278F032822458012000F8172 /* PhotoViewModel.swift */,
@@ -473,6 +484,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278694282240D24A00CBEF36 /* Photo.swift in Sources */,
+				273714B2224C3120005D3BE1 /* PeekAnimationController.swift in Sources */,
 				2792737A2249729100B779F8 /* Observable.swift in Sources */,
 				278F03092242C996000F8172 /* ApiManager.swift in Sources */,
 				278F030C2242C996000F8172 /* HTTPTask.swift in Sources */,
