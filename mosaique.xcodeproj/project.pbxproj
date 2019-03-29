@@ -33,6 +33,8 @@
 		278F03302246B844000F8172 /* AppButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F032F2246B844000F8172 /* AppButton.swift */; };
 		279273762247BA7200B779F8 /* Resource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279273752247BA7200B779F8 /* Resource.swift */; };
 		2792737A2249729100B779F8 /* Observable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 279273792249729100B779F8 /* Observable.swift */; };
+		2799BBDD224EB20100AC29A5 /* NetworkError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799BBDC224EB20100AC29A5 /* NetworkError.swift */; };
+		2799BBDF224EC4F200AC29A5 /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2799BBDE224EC4F200AC29A5 /* Result.swift */; };
 		27B104DC2240A89D005D0E03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 27B104DB2240A89D005D0E03 /* AppDelegate.swift */; };
 		27B104E12240A89D005D0E03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 27B104DF2240A89D005D0E03 /* Main.storyboard */; };
 		27B104E32240A8A1005D0E03 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 27B104E22240A8A1005D0E03 /* Assets.xcassets */; };
@@ -80,6 +82,8 @@
 		278F032F2246B844000F8172 /* AppButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppButton.swift; sourceTree = "<group>"; };
 		279273752247BA7200B779F8 /* Resource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Resource.swift; sourceTree = "<group>"; };
 		279273792249729100B779F8 /* Observable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Observable.swift; sourceTree = "<group>"; };
+		2799BBDC224EB20100AC29A5 /* NetworkError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkError.swift; sourceTree = "<group>"; };
+		2799BBDE224EC4F200AC29A5 /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 		27B104D82240A89D005D0E03 /* mosaique.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mosaique.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		27B104DB2240A89D005D0E03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		27B104E02240A89D005D0E03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -212,6 +216,8 @@
 				278F03052242C996000F8172 /* EndPointType.swift */,
 				279273752247BA7200B779F8 /* Resource.swift */,
 				279273792249729100B779F8 /* Observable.swift */,
+				2799BBDC224EB20100AC29A5 /* NetworkError.swift */,
+				2799BBDE224EC4F200AC29A5 /* Result.swift */,
 			);
 			path = Service;
 			sourceTree = "<group>";
@@ -481,6 +487,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				278694282240D24A00CBEF36 /* Photo.swift in Sources */,
+				2799BBDD224EB20100AC29A5 /* NetworkError.swift in Sources */,
 				273714B2224C3120005D3BE1 /* PeekAnimationController.swift in Sources */,
 				2792737A2249729100B779F8 /* Observable.swift in Sources */,
 				278F03092242C996000F8172 /* ApiManager.swift in Sources */,
@@ -503,6 +510,7 @@
 				278F032922458012000F8172 /* PhotoViewModel.swift in Sources */,
 				278F032122456642000F8172 /* AlbumViewModel.swift in Sources */,
 				278F03102242C996000F8172 /* EndPointType.swift in Sources */,
+				2799BBDF224EC4F200AC29A5 /* Result.swift in Sources */,
 				278F03182243B70B000F8172 /* AlbumsController.swift in Sources */,
 				278F032322456DB9000F8172 /* AlbumViewController.swift in Sources */,
 				278F032D2246AF02000F8172 /* PhotoViewController.swift in Sources */,
