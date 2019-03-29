@@ -15,7 +15,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
   func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-    // Override point for customization after application launch.
+    
+    let sb = UIStoryboard.init(name: "Main", bundle: nil)
+    if let mainNavigationVC = sb.instantiateViewController(withIdentifier: "MainNavigationVC") as? UINavigationController {
+      if let homeVC = mainNavigationVC.visibleViewController as? AlbumsViewController {
+        homeVC.albumsController = AlbumsController(with: ApiManager())
+        self.window?.rootViewController = mainNavigationVC
+        self.window?.makeKeyAndVisible()
+      }
+    }
     return true
   }
 
@@ -41,6 +49,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
   }
 
-
 }
-
