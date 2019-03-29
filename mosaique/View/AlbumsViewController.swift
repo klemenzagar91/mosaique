@@ -27,6 +27,15 @@ class AlbumsViewController: UIViewController {
         self?.refreshControl.endRefreshing()
       }
     }
+    
+    albumsController.errorObserver.valueChanged = { [weak self] errorMessage in
+      DispatchQueue.main.async {
+        if let message = errorMessage {
+          self?.displayMessage(title: "Oh snap!", message: message)
+          self?.refreshControl.endRefreshing()
+        }
+      }
+    }
     albumsController.fetchData()
   }
   
@@ -40,6 +49,7 @@ class AlbumsViewController: UIViewController {
   override func viewDidAppear(_ animated: Bool) {
     super.viewDidAppear(animated)
   }
+
   
   override func didReceiveMemoryWarning() {
     albumsController.clearMemory()
@@ -73,6 +83,13 @@ class AlbumsViewController: UIViewController {
     album.secondPreviewObserver.valueChanged = nil
     album.firstPreviewImageObserver.valueChanged = nil
     album.secondPreviewImageObserver.valueChanged = nil
+  }
+  
+  
+  func displayMessage(title: String, message: String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    present(alert, animated: true)
   }
   
   

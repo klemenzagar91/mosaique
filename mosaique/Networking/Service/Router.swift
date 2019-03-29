@@ -19,14 +19,26 @@ protocol NetworkRouter: class {
 class Router<EndPoint: EndPointType>: NetworkRouter {
   private var task: URLSessionTask?
   
-  func requestObject<T: Decodable>(_ route: EndPoint, completion: @escaping ( T?, Error?) -> ()) {
+  func requestObject<T: Decodable>(_ route: EndPoint, completion: @escaping (Result<T>) -> ()) {
     request(route) { (data, response, error) in
       guard let responseData = data else {
-        completion(nil, nil)
+        if let error = error as? NetworkError {
+          completion(Result.failure(error))
+        } else {
+          let networkError = NetworkError.responseError(reason: .systemNetworkError(error: error))
+          completion(Result.failure(networkError))
+        }
+        
         return
       }
-      let object = Resource.parse(responseData, into: T.self)
-      completion(object, error)
+      do {
+        let object = try Resource.parse(responseData, into: T.self)
+        completion(Result.success(object))
+      }
+      catch {
+        let networkError = NetworkError.responseError(reason: .unableToDecode(error: error))
+        completion(Result.failure(networkError))
+      }
     }
   }
   

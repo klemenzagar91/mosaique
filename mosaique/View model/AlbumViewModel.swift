@@ -12,10 +12,19 @@ import UIKit
 class AlbumViewModel {
   let album: Album
   let title: String
+  let apiManager: ApiManager
+  
+  private var photos: [Photo] = []
+  let photoViewModelsObserver = Observable([PhotoViewModel]())
+  private var photoViewModels = [PhotoViewModel]() {
+    didSet {
+      setupPreviews()
+      photoViewModelsObserver.value = photoViewModels
+    }
+  }
+  
   let firstPreviewObserver: Observable<PhotoViewModel?> = Observable(nil)
   let firstPreviewImageObserver: Observable<UIImage?> = Observable(nil)
-  
-  
   private var firstPreview: PhotoViewModel? {
     didSet {
       firstPreviewObserver.value = firstPreview
@@ -24,6 +33,7 @@ class AlbumViewModel {
       }
     }
   }
+  
   let secondPreviewObserver: Observable<PhotoViewModel?> = Observable(nil)
   let secondPreviewImageObserver: Observable<UIImage?> = Observable(nil)
   var secondPreview: PhotoViewModel? {
@@ -34,23 +44,15 @@ class AlbumViewModel {
       }
     }
   }
-  let apiManager: ApiManager
+  
+  let errorObserver: Observable<ErrorMessage?> = Observable(nil)
+  
+  
   
   private var fetched = false
   private var isFetchingAlbums = false
-  
-  private var photos: [Photo] = []
-  let photoViewModelsObserver = Observable([PhotoViewModel]())
-  private var photoViewModels = [PhotoViewModel]() {
-    didSet {
-      setupPreviews()
-      photoViewModelsObserver.value = photoViewModels
-    }
-  }
 
-  var photosCountSubtitle: String {
-    return String(photoViewModels.count) + " " + (photoViewModels.count == 1 ? "photo" : "photos")
-  }
+  
   
   
   init(with album: Album, apiManager: ApiManager) {
@@ -82,17 +84,24 @@ class AlbumViewModel {
     return album.id
   }
   
+  var photosCountSubtitle: String {
+    return String(photoViewModels.count) + " " + (photoViewModels.count == 1 ? "photo" : "photos")
+  }
+  
   func fetchPhotosIfNeeded() {
     if !fetched && !isFetchingAlbums {
       isFetchingAlbums = true
-      apiManager.getAllPhotos(albumId: album.id) { [weak self] (photos, error) in
+      apiManager.getAllPhotos(albumId: album.id) { [weak self] result in
         self?.isFetchingAlbums = false
-        if let photos = photos, let strongSelf = self {
-          strongSelf.fetched = true
-          strongSelf.photos = photos
-          strongSelf.photoViewModels = photos.map { PhotoViewModel(with: $0, apiManager: strongSelf.apiManager) }
-        } else {
-          print("error fetching for \(self?.album.id)")
+        switch result {
+        case .success(let photos):
+          if let strongSelf = self {
+            strongSelf.fetched = true
+            strongSelf.photos = photos
+            strongSelf.photoViewModels = photos.map { PhotoViewModel(with: $0, apiManager: strongSelf.apiManager) }
+          }
+        case .failure(let error):
+          self?.errorObserver.value = error.errorFrontEndDescription
         }
       }
     }
@@ -116,4 +125,21 @@ class AlbumViewModel {
   }
 }
 
+
+private extension NetworkError {
+  var errorFrontEndDescription: ErrorMessage {
+    switch self {
+    case .requestError(let reason):
+      switch reason {
+      case .parametersNil, .encodingFailed, .missingURL:
+        return "Cannot retrieve any data"
+      }
+    case .responseError(let reason):
+      switch reason {
+      case .systemNetworkError, .unableToDecode:
+        return "Cannot retrieve any data"
+      }
+    }
+  }
+}
 

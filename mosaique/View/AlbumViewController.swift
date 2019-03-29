@@ -30,6 +30,13 @@ class AlbumViewController: UIViewController {
         self.collectionView.reloadData()
       }
     }
+    albumViewModel.errorObserver.valueChanged = { [weak self] errorMessage in
+      DispatchQueue.main.async {
+        if let message = errorMessage {
+          self?.displayMessage(title: "Oh snap!", message: message)
+        }
+      }
+    }
     albumViewModel.fetchPhotosIfNeeded()
   }
   
@@ -41,6 +48,12 @@ class AlbumViewController: UIViewController {
   
   override var preferredStatusBarStyle: UIStatusBarStyle {
     return .lightContent
+  }
+  
+  func displayMessage(title: String, message: String) {
+    let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+    alert.addAction(UIAlertAction(title: "OK", style: .default))
+    present(alert, animated: true)
   }
 }
 

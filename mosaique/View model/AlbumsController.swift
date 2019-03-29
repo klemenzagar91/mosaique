@@ -9,13 +9,14 @@
 import Foundation
 import UIKit
 
+typealias ErrorMessage = String
+
 class AlbumsController {
   private var albums: [Album] = []
   private let apiManager: ApiManager
   
   let albumViewModels = Observable([AlbumViewModel]())
-  
-  
+  let errorObserver: Observable<ErrorMessage?> = Observable(nil)
   
   
   init(with apiManager: ApiManager) {
@@ -35,10 +36,15 @@ class AlbumsController {
   }
   
   func fetchData() {
-    apiManager.getAllAlbums { [weak self] (albums, error) in
-      if let albums = albums, let strongSelf = self {
-        strongSelf.albums = albums
-        strongSelf.albumViewModels.value = albums.map { AlbumViewModel(with: $0, apiManager: strongSelf.apiManager) }
+    apiManager.getAllAlbums { [weak self] result in
+      switch result {
+      case .success(let albums):
+        if let strongSelf = self {
+          strongSelf.albums = albums
+          strongSelf.albumViewModels.value = albums.map { AlbumViewModel(with: $0, apiManager: strongSelf.apiManager) }
+        }
+      case .failure(let error):
+        self?.errorObserver.value = error.errorFrontEndDescription
       }
     }
   }
@@ -46,6 +52,23 @@ class AlbumsController {
   func clearMemory() {
     albumViewModels.value.forEach {
       $0.clearMemory()
+    }
+  }
+}
+
+private extension NetworkError {
+  var errorFrontEndDescription: ErrorMessage {
+    switch self {
+    case .requestError(let reason):
+      switch reason {
+        case .parametersNil, .encodingFailed, .missingURL:
+        return "Cannot retrieve any data"
+      }
+    case .responseError(let reason):
+      switch reason {
+      case .systemNetworkError, .unableToDecode:
+        return "Cannot retrieve any data"
+      }
     }
   }
 }
