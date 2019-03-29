@@ -15,7 +15,6 @@
 		278F03072242C996000F8172 /* URLParameterEncoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02F92242C996000F8172 /* URLParameterEncoding.swift */; };
 		278F03082242C996000F8172 /* JSONParameterEncoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02FA2242C996000F8172 /* JSONParameterEncoder.swift */; };
 		278F03092242C996000F8172 /* ApiManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02FC2242C996000F8172 /* ApiManager.swift */; };
-		278F030A2242C996000F8172 /* MovieEndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F02FE2242C996000F8172 /* MovieEndPoint.swift */; };
 		278F030C2242C996000F8172 /* HTTPTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F03012242C996000F8172 /* HTTPTask.swift */; };
 		278F030D2242C996000F8172 /* HTTPMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F03022242C996000F8172 /* HTTPMethod.swift */; };
 		278F030E2242C996000F8172 /* Router.swift in Sources */ = {isa = PBXBuildFile; fileRef = 278F03032242C996000F8172 /* Router.swift */; };
@@ -63,7 +62,6 @@
 		278F02F92242C996000F8172 /* URLParameterEncoding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLParameterEncoding.swift; sourceTree = "<group>"; };
 		278F02FA2242C996000F8172 /* JSONParameterEncoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = JSONParameterEncoder.swift; sourceTree = "<group>"; };
 		278F02FC2242C996000F8172 /* ApiManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ApiManager.swift; sourceTree = "<group>"; };
-		278F02FE2242C996000F8172 /* MovieEndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieEndPoint.swift; sourceTree = "<group>"; };
 		278F03012242C996000F8172 /* HTTPTask.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPTask.swift; sourceTree = "<group>"; };
 		278F03022242C996000F8172 /* HTTPMethod.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HTTPMethod.swift; sourceTree = "<group>"; };
 		278F03032242C996000F8172 /* Router.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Router.swift; sourceTree = "<group>"; };
@@ -199,7 +197,6 @@
 		278F02FD2242C996000F8172 /* EndPoint */ = {
 			isa = PBXGroup;
 			children = (
-				278F02FE2242C996000F8172 /* MovieEndPoint.swift */,
 				278F03152242D2A3000F8172 /* AlbumEndPoint.swift */,
 			);
 			path = EndPoint;
@@ -502,7 +499,6 @@
 				278F03062242C996000F8172 /* ParameterEncoding.swift in Sources */,
 				278F02F322427065000F8172 /* AlbumsViewController.swift in Sources */,
 				278F031D2243DB25000F8172 /* AlbumPreviewCell.swift in Sources */,
-				278F030A2242C996000F8172 /* MovieEndPoint.swift in Sources */,
 				278694262240D24000CBEF36 /* Album.swift in Sources */,
 				278F032922458012000F8172 /* PhotoViewModel.swift in Sources */,
 				278F032122456642000F8172 /* AlbumViewModel.swift in Sources */,

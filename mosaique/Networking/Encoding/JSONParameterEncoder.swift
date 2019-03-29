@@ -1,9 +1,9 @@
 //
-//  JSONEncoding.swift
-//  NetworkLayer
+//  JSONParameterEncoder.swift
+//  mosaique
 //
-//  Created by Malcolm Kumwenda on 2018/03/05.
-//  Copyright © 2018 Malcolm Kumwenda. All rights reserved.
+//  Created by Klemen Zagar on 29/03/2019.
+//  Copyright © 2019 Klemen Zagar. All rights reserved.
 //
 
 import Foundation

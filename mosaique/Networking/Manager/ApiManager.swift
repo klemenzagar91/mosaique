@@ -1,42 +1,34 @@
 //
-//  NetworkManager.swift
-//  NetworkLayer
+//  ApiManager.swift
+//  mosaique
 //
-//  Created by Malcolm Kumwenda on 2018/03/11.
-//  Copyright © 2018 Malcolm Kumwenda. All rights reserved.
+//  Created by Klemen Zagar on 29/03/2019.
+//  Copyright © 2019 Klemen Zagar. All rights reserved.
 //
 
 import Foundation
 import UIKit
 
-enum NetworkResponse:String {
-  case success
-  case authenticationError = "You need to be authenticated first."
-  case badRequest = "Bad request"
-  case outdated = "The url you requested is outdated."
-  case failed = "Network request failed."
-  case noData = "Response returned with no data to decode."
-  case unableToDecode = "We could not decode the response."
+
+enum NetworkEnvironment {
+  case production
+  case staging
 }
 
-enum Result<String> {
-  case success
-  case failure(String)
-}
 
 class ApiManager {
   static let environment : NetworkEnvironment = .production
   let albumRouter = Router<AlbumApi>()
   
-  func getAllAlbums(completion: @escaping ([Album]?, Error?) -> ()) {
-    albumRouter.requestObject(.all) { (response, error) in
-      completion(response, error)
+  func getAllAlbums(completion: @escaping (Result<[Album]>) -> ()) {
+    albumRouter.requestObject(.all) { result in
+      completion(result)
     }
   }
   
-  func getAllPhotos(albumId: AlbumId, completion: @escaping ([Photo]?, Error?) -> ()) {
-    albumRouter.requestObject(.photos(albumId: albumId)) { (response, error) in
-      completion(response, error)
+  func getAllPhotos(albumId: AlbumId, completion: @escaping (Result<[Photo]>) -> ()) {
+    albumRouter.requestObject(.photos(albumId: albumId)) { result in
+      completion(result)
     }
   }
   
