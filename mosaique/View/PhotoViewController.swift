@@ -55,7 +55,14 @@ class PhotoViewController: UIViewController {
   
   
   func updateUI() {
-    photoView.image = photoViewModel.bestPossiblePhoto
+    UIView.transition(with: photoView,
+                      duration: 0.25,
+                      options: [.allowAnimatedContent, .transitionCrossDissolve],
+                      animations: { [weak self] in
+                        self?.photoView.image = self?.photoViewModel.bestPossiblePhoto
+                        
+    })
+    
     photoTitleLabel.text = photoViewModel.photo.title.capitalizingFirstLetter()
   }
   

@@ -33,8 +33,8 @@ class PeekAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     tileView.layer.cornerRadius = toVC.peekView().layer.cornerRadius
     tileView.frame = sourceTile.frameInWindowsCoordinateSystem()
     let finalFrame = toVC.peekView().frameInWindowsCoordinateSystem()
-    contentView.transform = CGAffineTransform(scaleX: 3, y: 3)
-    
+    contentView.transform = CGAffineTransform(scaleX: 1.2, y: 2.5)
+    contentView.alpha = 0.0
     if presenting {
       container.addSubview(tileView)
       toVC.peekView().alpha = 0.0
@@ -47,6 +47,7 @@ class PeekAnimationController: NSObject, UIViewControllerAnimatedTransitioning {
     UIView.animate(withDuration: duration*4.0/5, delay: 0.0, options: [], animations: {
       tileView.frame = finalFrame
       background.alpha = 1.0
+      contentView.alpha = 1.0
       contentView.transform = CGAffineTransform.identity
     })
     { _ in
@@ -106,7 +107,8 @@ class PeekDismissAnimationController: NSObject, UIViewControllerAnimatedTransiti
     UIView.animate(withDuration: duration*4.0/5, delay: 0.0, options: [], animations: {
       tileView.frame = finalFrame
       background.alpha = 0.0
-      contentView.transform = CGAffineTransform(scaleX: 3, y: 3)
+      contentView.alpha = 0.0
+      contentView.transform = CGAffineTransform(scaleX: 1.2, y: 2.5)
     })
     
     UIView.animate(withDuration: duration*1/5, delay: duration*4/5, options: [], animations: {

@@ -32,9 +32,9 @@ class AlbumPreviewCell: UITableViewCell {
     }
   }
   
-  static let previewPositions = [PreviewPositions(first: Position(topOffset: -14, angle: 5), second: Position(topOffset: -7, angle: -6)),
+  static let previewPositions = [PreviewPositions(first: Position(topOffset: -15, angle: 4), second: Position(topOffset: -7, angle: -6)),
                                  PreviewPositions(first: Position(topOffset: -9, angle: 2), second: Position(topOffset: -3, angle: -6)),
-                                 PreviewPositions(first: Position(topOffset: -19, angle: -5), second: Position(topOffset: -11, angle: 1))]
+                                 PreviewPositions(first: Position(topOffset: -3, angle: -6), second: Position(topOffset: -11, angle: 2))]
   
   override func awakeFromNib() {
     super.awakeFromNib()
