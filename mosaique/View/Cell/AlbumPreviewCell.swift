@@ -32,9 +32,12 @@ class AlbumPreviewCell: UITableViewCell {
     }
   }
   
-  static let previewPositions = [PreviewPositions(first: Position(topOffset: -15, angle: 4), second: Position(topOffset: -7, angle: -6)),
-                                 PreviewPositions(first: Position(topOffset: -9, angle: 2), second: Position(topOffset: -3, angle: -6)),
-                                 PreviewPositions(first: Position(topOffset: -3, angle: -6), second: Position(topOffset: -11, angle: 2))]
+  static let previewPositions = [PreviewPositions(first: Position(topOffset: -9, angle: 2), second: Position(topOffset: -5, angle: -4)),
+                                 PreviewPositions(first: Position(topOffset: -19, angle: 3), second: Position(topOffset: -8, angle: -3)),
+                                 PreviewPositions(first: Position(topOffset: -13, angle: 2), second: Position(topOffset: -6, angle: -5)),
+                                 PreviewPositions(first: Position(topOffset: -5, angle: 5), second: Position(topOffset: -13, angle: -6)),
+                                 PreviewPositions(first: Position(topOffset: -7, angle: 2), second: Position(topOffset: -16, angle: -5))
+  ]
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -87,6 +90,7 @@ class AlbumPreviewCell: UITableViewCell {
   
   func assign(modelIdentifier: Int) {
     self.modelIdentifier = modelIdentifier
+    rotateWithAnglePreset()
   }
   
   func setup(for album: AlbumViewModel) {
