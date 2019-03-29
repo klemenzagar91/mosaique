@@ -32,8 +32,9 @@ class AlbumPreviewCell: UITableViewCell {
     }
   }
   
-  static let previewPositions = [PreviewPositions(first: Position(topOffset: -2, angle: 5), second: Position(topOffset: -16, angle: -7))]
-//  AnglePair(first: 5, second: -7), AnglePair(first: 4, second: -4), AnglePair(first: 6, second: -8), AnglePair(first: 7, second: 3)]
+  static let previewPositions = [PreviewPositions(first: Position(topOffset: -14, angle: 5), second: Position(topOffset: -7, angle: -6)),
+                                 PreviewPositions(first: Position(topOffset: -9, angle: 2), second: Position(topOffset: -3, angle: -6)),
+                                 PreviewPositions(first: Position(topOffset: -19, angle: -5), second: Position(topOffset: -11, angle: 1))]
   
   override func awakeFromNib() {
     super.awakeFromNib()
@@ -71,7 +72,6 @@ class AlbumPreviewCell: UITableViewCell {
   
   override func setSelected(_ selected: Bool, animated: Bool) {
     super.setSelected(selected, animated: animated)
-    // Configure the view for the selected state
     if selected {
       UIView.animate(withDuration: 0.24, delay: 0.0, options: .beginFromCurrentState, animations: { [weak self] in
         self?.indicator.alpha = 0.7
